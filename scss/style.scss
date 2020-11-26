@@ -1,0 +1,15 @@
+// Importing scss files
+
+@import 'base/reset';
+@import 'utils/variables';
+@import 'utils/helpers';
+@import 'base/global';
+@import 'layout/header';
+@import 'components/banner';
+@import 'components/services';
+@import 'components/projects';
+@import 'components/about';
+@import 'components/contact';
+@import 'layout/footer';
+@import 'utils/keyframes';
+@import 'utils/media-queries';

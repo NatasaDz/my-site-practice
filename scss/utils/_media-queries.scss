@@ -1,0 +1,182 @@
+/* Media Query For Tablet */
+@media only screen and (min-width: 768px) {
+	/* Global */
+	.cta {
+		font-size: 2.5rem;
+		padding: 2rem 6rem;
+	}
+	.section-title {
+		font-size: 6rem;
+	}
+	/* End Global */
+
+	/* Header */
+	.header {
+		&__nav-item {
+			&:hover {
+				.header__nav-link {
+					&::after {
+						transform: translate(-50%, -50%) scale(0.8);
+						letter-spacing: initial;
+					}
+				}
+			}
+		}
+	}
+	/* End Header */
+
+	/* Banner */
+	.banner__title {
+		font-size: 7rem;
+	}
+	/* End Banner */
+
+	/* Services */
+	.services__item {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+	/* End Services */
+
+	/* Projects */
+	.projects {
+		&__item {
+			flex-direction: row;
+			height: 40rem;
+			margin: 0;
+			width: 100%;
+			border-radius: 0;
+
+			&:nth-child(even) {
+				flex-direction: row-reverse;
+			}
+		}
+
+		&__info {
+			height: 100%;
+		}
+
+		&__img-wrapper {
+			height: 100%;
+		}
+	}
+	/* End Projects */
+
+	/* About */
+	.about {
+		flex-direction: row;
+
+		&__left-section {
+			width: 60rem;
+			height: 40rem;
+			padding-left: 6rem;
+		}
+
+		&__img-wrapper {
+			&::after {
+				left: -4.5rem;
+				top: 3.4rem;
+				border: 1rem solid $primary-color;
+			}
+		}
+
+		&__right-section {
+			text-align: left;
+			padding: 3rem;
+		}
+
+		&__title {
+			text-align: left;
+		}
+
+		&__text {
+			width: 100%;
+			margin: 0;
+		}
+
+		&__btn {
+			padding: 1rem 2rem;
+			font-size: 2rem;
+		}
+	}
+	/* End About */
+
+	/* Contact  */
+	.contact {
+		flex-direction: column;
+		padding: 10rem 0;
+		align-items: center;
+		justify-content: center;
+		min-width: 20vh;
+
+		&__items {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			margin: 0;
+		}
+
+		&__item {
+			width: 30%;
+			margin: 0;
+			flex-direction: row;
+		}
+
+		&__icon-wrapper {
+			height: 10rem;
+			width: 10rem;
+		}
+
+		&__icon {
+			object-fit: contain;
+		}
+
+		&__info {
+			width: 100%;
+			text-align: left;
+			padding-left: 2rem;
+		}
+	}
+	/* End contact */
+}
+/* End Media Query For Tablet */
+
+/* Media Query For Desktop */
+@media only screen and (min-width: 1200px) {
+	/* Header */
+	.header {
+		&__hamburger {
+			display: none;
+		}
+
+		&__nav-list {
+			position: initial;
+			display: block;
+			height: auto;
+			width: fit-content;
+			background-color: transparent;
+		}
+
+		&__nav-item {
+			display: inline-block;
+		}
+
+		&__nav-link {
+			font-size: 1.8rem;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+	/* End Header */
+
+	/* Services */
+	.services__item {
+		flex-basis: 22%;
+		margin: 1.5%;
+	}
+	/* End Services */
+}
+/* End  Media Query For Desktop */

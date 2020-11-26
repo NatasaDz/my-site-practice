@@ -1,0 +1,138 @@
+.header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
+	transition: .3s ease background-color;
+
+	&__nav-bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+		max-width: 130rem;
+		padding: 0 1rem;
+	}
+
+	&__hamburger {
+		height: 6rem;
+		width: 6rem;
+		border: .3rem solid $white;
+		border-radius: 50%;
+		position: relative;
+		z-index: 100;
+		cursor: pointer;
+		transform: scale(.8);
+		margin-right: 2rem;
+
+		&::after {
+			position: absolute;
+			content: '';
+			height: 100%;
+			width: 100%;
+			border-radius: 50%;
+			border: .3rem solid $white;
+			animation: hamburger_puls 1s ease infinite;
+		}
+
+		&.active {
+			.header__bar {
+				&::before {
+					bottom: 0;
+				}
+
+				&::after {
+					top: 0;
+				}
+			}
+		}
+	}
+
+	&__bar {
+		height: .2rem;
+		width: 3rem;
+		position: relative;
+		background-color: $white;
+		z-index: -1;
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			background-color: $white;
+			transition: .3s ease;
+			transition-property: top, bottom;
+		}
+
+		&::after {
+			top: .8rem;
+		}
+
+		&::before {
+			bottom: .8rem;
+		}
+	}
+
+	&__nav-list {
+		list-style: none;
+		position: absolute;
+		background-color: rgb(31, 30, 30);
+		width: 100vw;
+		height: 100vh;
+		left: 100%;
+		top: 0;
+		flex-direction: column;
+		z-index: 1;
+		overflow-x: hidden;
+		transition: .5s ease left;
+
+		&.active {
+			left: 0%;
+		}
+	}
+
+	&__nav-item {
+		&:hover {
+			.header__nav-link {
+				color: $primary-color;
+
+				&::after {
+					transform: translate(-50%, -50%) scale(0.5);
+					letter-spacing: initial;
+				}
+			}
+		}
+	}
+
+	&__nav-link {
+		font-size: 2.5rem;
+		font-weight: 500;
+		letter-spacing: .2rem;
+		text-decoration: none;
+		color: $white;
+		text-transform: uppercase;
+		padding: 2rem;
+		display: block;
+
+		&::after {
+			content: attr(data-after);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0);
+			color: rgba(240, 248, 255, 0.03);
+			font-size: 13rem;
+			letter-spacing: 5rem;
+			z-index: -1;
+			transition: .3s ease letter-spacing;
+		}
+	}
+}
